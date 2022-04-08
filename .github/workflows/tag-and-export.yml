@@ -41,6 +41,7 @@ jobs:
         run: |
           git config --global user.name '${{ github.actor }}'
           git config --global user.email '${{ github.actor }}@users.noreply.github.com'
+          git fetch && git checkout origin/$GITHUB_HEAD_REF
           git add .bitmap
           git commit -am "update .bitmap with new component versions (automated). --skip-ci"
-          git push HEAD:$GITHUB_HEAD_REF
+          git push
