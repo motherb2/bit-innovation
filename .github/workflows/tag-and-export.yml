@@ -17,6 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
+          fetch-depth: 0
           ref: ${{ github.event.pull_request.head.ref }}
       - name: Use Node.js 12
         uses: actions/setup-node@v1
