@@ -40,7 +40,14 @@ jobs:
         run: bit tag --persist
       - name: Export components
         run: bit export
+      - name: Verify .bitmap file changed
+        uses: tj-actions/verify-changed-files@v5.5
+        id: changed_files
+        with:
+          files: |
+             .bitmap
       - name: Commit changes made to .bitmap
+        if: steps.changed_files.outputs.files_changed == 'true'
         run: |
           git config --global user.name '${{ github.actor }}'
           git config --global user.email '${{ github.actor }}@users.noreply.github.com'
