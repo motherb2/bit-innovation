@@ -13,7 +13,13 @@
         "scope": "fineos.components",
         "version": "0.0.10",
         "mainFile": "index.ts",
-        "rootDir": "components/ui/my-welcome"
+        "rootDir": "components/ui/my-welcome",
+        "nextVersion": {
+            "version": "patch",
+            "message": "my message",
+            "username": "Brian M",
+            "email": "brian@limelighthealth.com"
+        }
     },
     "$schema-version": "14.9.0"
 }
